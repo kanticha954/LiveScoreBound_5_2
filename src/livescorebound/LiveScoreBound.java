@@ -23,24 +23,23 @@ public class LiveScoreBound {
         Subscriber2 sub2 = new Subscriber2();
         liveScore.addPropertyChangeListener(sub1);
         liveScore.addPropertyChangeListener(sub2);
-        
-        System.out.println("Enter Score:");
+       
         Scanner sc = new Scanner(System.in);
-        String setScore = sc.nextLine();
-        while(setScore!=null){
-            if(setScore.equals(""))
-               System.out.println("Enter Score:");
-               liveScore.setScoreLine(setScore);
-               liveScore.setScoreLine(setScore);
-            if(sc.hasNextLine())
-                setScore = sc.nextLine();
+        int thai;
+        int uae;
+       
+        while(true){
+            System.out.println("Enter score: ");
+            thai = sc.nextInt();
+            uae = sc.nextInt();
             
-            else
-                setScore = null;
-               
-            
+            if(uae == 0 && thai == 0){
+                break;
+            }
 
-        } 
+            liveScore.setScoreLine(thai);
+            liveScore.setScoreLine(uae);
+        }
     }
     
 }

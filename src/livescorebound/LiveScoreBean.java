@@ -17,7 +17,7 @@ public class LiveScoreBean implements Serializable {
     
     public static final String SCORELINE_PROPERTY = "scoreLine";
     
-    private String scoreLine;
+    private int scoreLine;
     
     private PropertyChangeSupport propertySupport;
     
@@ -25,13 +25,13 @@ public class LiveScoreBean implements Serializable {
         propertySupport = new PropertyChangeSupport(this);
     }
     
-    public String getSampleProperty() {
+    public int getSampleProperty() {
         return scoreLine;
     }
     
     
-    public void setScoreLine(String value) {
-        String oldValue = scoreLine;
+    public void setScoreLine(int value) {
+        int oldValue = scoreLine;
         scoreLine = value;
         propertySupport.firePropertyChange(SCORELINE_PROPERTY, oldValue, scoreLine);
     }
